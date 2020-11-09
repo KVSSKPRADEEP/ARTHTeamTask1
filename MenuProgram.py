@@ -69,7 +69,6 @@ while True:
 	
 
                elif int(ch)==3:
-                while 1:
  	               print("""
  	               Press 1:)Master node
  	               Press 2:)Slave node
@@ -77,6 +76,7 @@ while True:
 
  	
  	               """)
+	       while True:
  	               option=input("Enter Choice :")
  	               if int(option) == 1 :
                          os.system("tput setaf 8")
@@ -107,8 +107,7 @@ while True:
                          os.system("jps")
                     elif int(option) == 3:
                         break
-		
- 	               else:
+                    else:
  		               print("Enter Valid Number")
  	
 
@@ -130,6 +129,7 @@ while True:
 	               Press 3:) No. of CPU's under usage
  	
  	               """)
+	   while True:
                     op=input("Enter Choice :")
                     if int(op) == 1:
                          os.system("clear")
@@ -141,7 +141,7 @@ while True:
                          os.system("clear")
                          os.system("lscpu")
                     else:
-                         print("Enter your choice with-in options") 
+                         break 
 
 
                elif int(ch)==6:
@@ -161,6 +161,7 @@ while True:
 
  	
  	               """)
+	   while True:
                     if int(op) == 1 :
                          os.system("clear")
                          os.system("tput setaf 8")
@@ -187,6 +188,7 @@ while True:
           
           
            	          """)
+	   while True:
                     if int(op) == 1 :
                          os.system("clear")
                          os.system("tput setaf 3")
@@ -293,6 +295,7 @@ while True:
                        Press 3:Linux
                        Press 4:Exit
                          """)
+	       while True:
                               cli=input("Enter Your OS: ")
                               if int(cli)==1:
                                    os.system("pip3 install awscli --upgrade --user")
@@ -322,7 +325,6 @@ while True:
 
 
                     elif int(ch)== 4:
-                         while True:
                               print("""     
 
                Press 1:Instances
@@ -332,6 +334,7 @@ while True:
                Press 5:Exit
 
                               """)
+	while True:
                               op=input("Enter Your Choice:")
 
                               if int(op)== 1 :
@@ -345,7 +348,7 @@ while True:
                Press 6:Reboot Instance
                Press 7:Exit
                               """)
-    
+    	while True:
                                    num=input("Enter Your Choice: ")
                                    if int(num)==1:
                                    imgid=input("Enter image ID: ")
@@ -375,7 +378,7 @@ while True:
                                    inst=input("Enter Instance ID: ")
                                    os.system("aws ec2 reboot-instances --instance-ids {0}".format(inst))
                               elif int(num)==7:
-                                   pass
+                                   break
                               else:
                                    print("Invalid choice")
 
@@ -393,7 +396,7 @@ while True:
                Press 6:Delete Volume
                Press 7:Exit
                """)
-
+	while True:
                          vm=input("Enter your Choice: ")
 
                          if int(vm)==1:
@@ -425,7 +428,7 @@ while True:
                               os.system("aws ec2 delete-volume --volume-id {0}".format(vid))
 
                          elif int(vm)==7:
-                              pass
+                              break
                          else:
                               print("Invalid Choice")
 
@@ -442,6 +445,7 @@ while True:
                Press 4:Delete Security Group
                Press 5:Exit
                          """)
+	while True:
                          sg=input("Enter your choice: ")
                          if int(sg)==1:
                               groupname = input("Enter the Security Group name: ")
@@ -459,8 +463,7 @@ while True:
                               groupname = input("Enter the Security Group name: ")
                               os.system("aws ec2 delete-security-group --group-name {}" .format(groupname))
 
-                         else:
-                              print("Invalid Choice")
+                         else: break
 
                          input("Enter To continue")
                          os.system("clear")     
@@ -474,6 +477,7 @@ while True:
                Press 4:Delete Key Pair
                Press 5:Exit
                """)
+	   while True:
                          key=input("Enter Your Choice: ")
 
                          if int(key)==1:
@@ -490,7 +494,7 @@ while True:
                          elif int(key)==4:
                               keyname = input("Enter the key name: ")
                               os.system("aws ec2 delete-key-pair  --key-name {}".format(keyname))
-
+                         elif int(key)==5:break
                          else:
                               print("Invalid Choice")
 
